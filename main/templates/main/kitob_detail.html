@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ kitob.nom }}</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+{% extends 'main/base.html' %}
+
+{% block sarlavha %}{{ kitob.nom }}{% endblock %}
+
+{% block kontent %}
+<div class="flex flex-col items-center justify-center my-10">
     <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 max-w-sm w-full">
         <h1 class="text-2xl font-black text-slate-900 tracking-tight">{{ kitob.nom }}</h1>
         <p class="text-sm text-slate-400 mt-1 mb-4">Janr: {{ kitob.janr }}</p>
-
+        
         <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-5">
             <p class="text-xs text-blue-500 font-bold uppercase tracking-wider">Muallif</p>
             <a href="/muallif/{{ kitob.muallif.id }}/" class="text-blue-700 font-bold text-lg hover:underline block mt-0.5">
                 {{ kitob.muallif.ism_familiya }} →
             </a>
         </div>
-
+        
         <a href="{% url 'bosh_sahifa' %}" class="w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl block text-sm transition shadow-md">
             ← Birinchi sahifaga chiqish
         </a>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

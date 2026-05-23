@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muallif Ma'lumotlari</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-center p-4 gap-4">
+{% extends 'main/base.html' %}
+
+{% block sarlavha %}Muallif Ma'lumotlari{% endblock %}
+
+{% block kontent %}
+<div class="flex flex-col items-center justify-center gap-6 my-10">
     <div class="bg-white rounded-2xl shadow-md border border-slate-100 p-6 max-w-sm w-full">
         <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2.5 py-1 rounded-md">Yozuvchi</span>
         <h2 class="text-2xl font-black text-slate-900 mt-3">{{ muallif.ism_familiya }}</h2>
@@ -16,8 +13,8 @@
         </div>
     </div>
 
-    <a href="/home/" class="text-slate-500 hover:text-slate-800 font-bold text-sm bg-white border border-slate-200 py-2 px-6 rounded-xl shadow-sm transition duration-200">
+    <a href="{% url 'home' %}" class="text-slate-500 hover:text-slate-800 font-bold text-sm bg-white border border-slate-200 py-2 px-6 rounded-xl shadow-sm transition duration-200">
         ← Asosiy menyuga qaytish
     </a>
-</body>
-</html>
+</div>
+{% endblock %}
