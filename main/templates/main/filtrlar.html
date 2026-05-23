@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Filtrlar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 min-h-screen py-10 px-4 flex flex-col items-center gap-4">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+        <h1 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">⚙️ Django Filtrlar Sinovi</h1>
+        <div class="space-y-3 text-sm text-slate-600">
+            <div class="flex justify-between border-b border-slate-50 pb-2"><span>Katta harf (upper):</span> <strong class="text-slate-900">{{ matn|upper }}</strong></div>
+            <div class="flex justify-between border-b border-slate-50 pb-2"><span>Kichik harf (lower):</span> <strong class="text-slate-900">{{ matn|lower }}</strong></div>
+            <div class="flex justify-between border-b border-slate-50 pb-2"><span>Har so'z bosh harfi (title):</span> <strong class="text-slate-900">{{ matn|title }}</strong></div>
+            <div class="flex justify-between border-b border-slate-50 pb-2"><span>Uzunligi (length):</span> <strong class="text-slate-900">{{ matn|length }} ta harf</strong></div>
+            <div class="flex justify-between border-b border-slate-50 pb-2"><span>Qo'shish (add:10):</span> <strong class="text-slate-900">{{ son|add:10 }}</strong></div>
+            <div class="flex justify-between"><span>Default (ism bo'sh bo'lsa):</span> <strong class="text-blue-600">{{ ism|default:"Mehmon" }}</strong></div>
+        </div>
+    </div>
+
+    <a href="/home/" class="text-slate-500 hover:text-slate-800 font-bold text-sm bg-white border border-slate-200 py-2 px-6 rounded-xl shadow-sm transition duration-200">
+        ← Asosiy menyuga qaytish
+    </a>
+</body>
+</html>

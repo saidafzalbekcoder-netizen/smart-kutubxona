@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+
+{% block sarlavha %}Bosh Sahifa | Vazifalar Navigatsiyasi{% endblock %}
+
+{% block kontent %}
+<div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl text-white p-8 md:p-12 text-center shadow-xl border border-slate-700 mb-10">
+    <span class="bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-blue-500/20 mb-4 inline-block">64-Dars Amaliyoti</span>
+    <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Kutubxona Navigatsiyasi</h1>
+    <p class="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+        Quyidagi interaktiv tugmalar yordamida barcha bajarilgan topshiriq va amaliyot sahifalariga oson oʻtishingiz mumkin.
+    </p>
+</div>
+
+<h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">📂 Topshiriqlar Ro'yxati</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <a href="{% url 'bosh_sahifa' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">🏠</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">1-Topshiriq: Bosh sahifa</p>
+        <p class="text-xs text-slate-400 mt-1">Oddiy render xabari</p>
+    </a>
+
+    <a href="{% url 'salom' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">👋</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">2-Topshiriq: Salomlashish</p>
+        <p class="text-xs text-slate-400 mt-1">Dinamik context uzatish</p>
+    </a>
+
+    <a href="{% url 'muallif' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">✍️</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">3-Topshiriq: Birinchi Muallif</p>
+        <p class="text-xs text-slate-400 mt-1">Obyekt ma'lumotlari</p>
+    </a>
+
+    <a href="{% url 'kitoblar' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">📚</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">4-Topshiriq: Kitoblar ro'yxati</p>
+        <p class="text-xs text-slate-400 mt-1">"for" sikli amaliyoti</p>
+    </a>
+
+    <a href="{% url 'filtrlar' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">⚙️</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">5-Topshiriq: Django Filtrlar</p>
+        <p class="text-xs text-slate-400 mt-1">Upper, lower sinovlari</p>
+    </a>
+
+    <a href="{% url 'shartlar' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">🟢</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">6-Topshiriq: Shartlar (If/Else)</p>
+        <p class="text-xs text-slate-400 mt-1">Mavjudlikni tekshirish</p>
+    </a>
+
+    <a href="{% url 'muallif_detail' muallif_id=1 %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">👤</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">7-Topshiriq: Muallif ID detail</p>
+        <p class="text-xs text-slate-400 mt-1">ID orqali bog'langan kitoblar</p>
+    </a>
+
+    <a href="{% url 'kitob_detail' kitob_id=1 %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">📖</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">8-Topshiriq: Kitob ID detail</p>
+        <p class="text-xs text-slate-400 mt-1">Orqaga qaytish tugmasi</p>
+    </a>
+
+    <a href="{% url 'static_test' %}" class="p-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all group">
+        <div class="text-2xl mb-1">🎨</div>
+        <p class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-sm">9-Topshiriq: Statik CSS Test</p>
+        <p class="text-xs text-slate-400 mt-1">Statik dizayn tekshiruvi</p>
+    </a>
+</div>
+{% endblock %}
